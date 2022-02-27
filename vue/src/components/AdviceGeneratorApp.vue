@@ -21,15 +21,17 @@
           width="444"
         />
       </figure>
-      <figure class="advice-card__dice">
-        <img
-          class="advice-card__dice-img"
-          src="../assets/icon-dice.svg"
-          alt="Die with five dots"
-          height="24"
-          width="24"
-        />
-      </figure>
+      <button class="advice-card__dice" type="button" @click="execute">
+        <figure class="advice-card__dice-figure">
+          <img
+            class="advice-card__dice-img"
+            src="../assets/icon-dice.svg"
+            alt="Die with five dots"
+            height="24"
+            width="24"
+          />
+        </figure>
+      </button>
     </main>
   </div>
 </template>
@@ -38,7 +40,8 @@
 import { computed } from "vue";
 import { useFetch, useMediaQuery } from "@vueuse/core";
 
-const { isFetching, data } = useFetch("https://api.adviceslip.com/advice");
+const url = "https://api.adviceslip.com/advice";
+const { isFetching, data, execute } = useFetch(url);
 
 const isMobile = useMediaQuery("(max-width: 600px)");
 
@@ -46,7 +49,7 @@ const advice = computed(() =>
   data.value ? JSON.parse(data.value) : undefined
 );
 
-const loading = computed(() => isFetching.value);
+const loading = computed(() => isFetching.value === false && !advice.value);
 </script>
 
 <style scoped lang="scss">
@@ -105,6 +108,14 @@ const loading = computed(() => isFetching.value);
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    &:hover {
+      box-shadow: 0 0 25px var(--neon-green);
+    }
+    &-figure {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 </style>
