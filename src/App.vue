@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <AdviceGeneratorApp />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import AdviceGeneratorApp from "./components/AdviceGeneratorApp.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    AdviceGeneratorApp,
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+:root {
+  --dark-blue: hsl(218, 37%, 20%);
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+}
+* {
+  box-sizing: border-box;
+  font-family: "Manrope";
+  font-weight: 800;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+body {
+  margin: 0;
 }
 </style>
