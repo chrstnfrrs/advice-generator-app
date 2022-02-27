@@ -1,6 +1,6 @@
 # vue
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/18b15e86-f58b-41ba-92ee-5d2c00842882/deploy-status)](https://app.netlify.com/sites/advice-generator-app-vue/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b79ee07b-7277-460c-a373-cade5e4e95aa/deploy-status)](https://app.netlify.com/sites/advice-generator-app-vue/deploys)
 
 ## Description
 
